@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class StackoverflowSearchConfig(AppConfig):
+class StackoverflowEngineConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'stackoverflow_search'
+    name = 'stackoverflow_engine'
