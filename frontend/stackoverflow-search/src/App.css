@@ -13,6 +13,7 @@ button {
     border-radius: 10px;
     border: none;
     font-family: 'Roboto Mono', monospace;
+    cursor: pointer;
 }
 
 button:hover {
