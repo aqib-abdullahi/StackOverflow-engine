@@ -8,11 +8,13 @@ function App() {
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [hasSearched, sethasSearched] = useState(false);
 
   const handleSearch = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setError(null);
+    sethasSearched(false);
 
     try {
       const response = await axios.get(`http://localhost:8000/api/search/?q=${query}`);
@@ -25,6 +27,11 @@ function App() {
     }
   };
 
+  const handleClear = () => {
+    setQuery('');
+    setResults([]);
+    setHasSearched(false);
+  };
 
   return (
     <div className="App">
@@ -33,14 +40,12 @@ function App() {
       <form onSubmit={handleSearch}>
         <div class="input-bar">
         <i class="las la-search"></i><input type="text" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Enter search query"/>
+        {query && <button type="button" className="clear-button" onClick={handleClear}>×</button>}
         </div>
         <button type="submit" disabled={isLoading}>
           {isLoading ? 'Searching...' : 'Search'}
         </button>
       </form>
-
-
-      {/* //rough trialsssss for my results*/}
 
       {error && <p className="error">{error}</p>}
       <div className="results">
@@ -58,7 +63,7 @@ function App() {
           ))
         
         ) : (
-          <p>No results found</p>
+          hasSearched && <p>No results found</p>
         )}
       </div>
 
