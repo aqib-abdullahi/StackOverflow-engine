@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import SearchQuery
-import requests
+from stackapi import StackAPI
 
 
 class StackOverflowSearch(APIView):
@@ -10,14 +10,15 @@ class StackOverflowSearch(APIView):
         query = request.GET.get('q', '')
 
         SearchQuery.objects.create(query=query)
-        response = requests.get(
-            'https://api.stackexchange.com/2.3/search',
-            params={
-                'order': 'desc',
-                'sort': 'activity',
-                'intitle': query,
-                'site': 'stackoverflow'
-            }
+
+        SITE = StackAPI('stackoverflow')
+        response = SITE.fetch('similar',
+            order = 'desc',
+            sort = 'relevance',
+            title = query,
+            intitle = query,
+            intext = query
         )
 
-        return Response(response.json())
+
+        return Response(response)
