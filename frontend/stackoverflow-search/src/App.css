@@ -29,7 +29,7 @@ input {
     border: 1px solid rgb(197, 195, 195);
     font-size: 1rem;
     margin-bottom: 30px;
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 input:focus {
@@ -58,7 +58,7 @@ form {
 
 h1 {
     margin: 0;
-    margin-bottom: 30px;
+    margin-bottom: 0;
 }
 
 .input-bar {
@@ -81,4 +81,11 @@ h1 {
     transform: translate(-50%, -50%);
     width: 100%;
     height: auto;
+}
+
+.title {
+    margin-top: 0;
+    margin-bottom: 30px;
+    position: relative;
+    top: -4px;
 }
