@@ -35,10 +35,10 @@ function ResultsPage() {
 
   return (
     <div className="App">
-      <h1>Search Results for "{query}"</h1>
+      {/* <h1>Search Results for "{query}"</h1>
       {isLoading && <p>Loading...</p>}
-      {error && <p className="error">{error}</p>}
-      <Result results={results} />
+      {error && <p className="error">{error}</p>} */}
+      <Result results={results} query={query} />
     </div>
   );
 }

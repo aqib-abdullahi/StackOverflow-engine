@@ -12,6 +12,8 @@ class StackOverflowSearch(APIView):
         SearchQuery.objects.create(query=query)
 
         SITE = StackAPI('stackoverflow')
+        SITE.page_size = 10
+        SITE.max_pages = 1
         response = SITE.fetch('similar',
             order = 'desc',
             sort = 'relevance',

@@ -1,10 +1,9 @@
 import '../styles/App.css'
-// import query from '../pages/searchResults';
 
-function Result({ results }) {
+function Result({ results, query }) {
     return (
       <div className="results">
-        {/* <h1>Search Results for "{query}"</h1> */}
+        <h1>Search Results for "{query}"</h1>          
         {results.length > 0 ? (
           results.map((item) => (
             <div key={item.question_id} className="result-item">
