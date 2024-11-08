@@ -19,6 +19,6 @@ services:
         value: sqlite:///db.sqlite3
     healthCheckPath: /admin/
 
-storage:
-  - name: django-sqlite
-    mountPath: /app/db.sqlite3
+# storage:
+#   - name: django-sqlite
+#     mountPath: /app/db.sqlite3
