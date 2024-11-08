@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'stackoverflow_engine',
+    'backend.stackoverflow_engine',
     'corsheaders',
     'rest_framework',
 ]
