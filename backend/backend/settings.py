@@ -30,7 +30,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    '127.0.0.1'
+    '127.0.0.1',
+    'stackoverflow-engine.onrender.com'
 ]
 
 
@@ -59,7 +60,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-ROOT_URLCONF = 'backend.urls'
+ROOT_URLCONF = 'backend.backend.urls'
 
 TEMPLATES = [
     {
@@ -77,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backend.wsgi.application'
+WSGI_APPLICATION = 'backend.backend.wsgi.application'
 
 
 # Database
