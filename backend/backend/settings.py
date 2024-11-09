@@ -65,7 +65,7 @@ ROOT_URLCONF = 'backend.backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'frontend/stackoverflow-search'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,6 +77,8 @@ TEMPLATES = [
         },
     },
 ]
+
+STATICFILES_DIRS = [BASE_DIR / 'frontend/stackoverflow-search']
 
 WSGI_APPLICATION = 'backend.backend.wsgi.application'
 
